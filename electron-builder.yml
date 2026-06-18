@@ -1,0 +1,23 @@
+appId: com.littlebuddy.desktop
+productName: Little Buddy
+directories:
+  output: release
+files:
+  - "apps/desktop/electron/**/*"
+  - "apps/desktop/renderer/out/**/*"
+  - "package.json"
+mac:
+  category: public.app-category.productivity
+  target: dmg
+  hardenedRuntime: true
+  entitlements: entitlements.mac.plist
+  entitlementsInherit: entitlements.mac.plist
+win:
+  target: nsis
+  icon: assets/icon.ico
+linux:
+  target: AppImage
+  icon: assets/icon.png
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
